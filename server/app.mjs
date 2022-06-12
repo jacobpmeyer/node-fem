@@ -9,3 +9,7 @@ const db = {
 }
 
 const app = express()
+
+app.use(urlencoded({ extended: true }))
+app.use(json())
+app.use(morgan('dev'))
