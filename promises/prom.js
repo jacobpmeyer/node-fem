@@ -29,3 +29,9 @@ async function f1() {
 
 f2()
 f1()
+
+// Logs in order:
+// potato
+// mac and cheese
+// soup
+// pizza
