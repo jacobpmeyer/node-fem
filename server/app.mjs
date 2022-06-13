@@ -12,6 +12,7 @@ const app = express()
 
 const port = 8000
 
+// Apply the middleware
 app.use(urlencoded({ extended: true }))
 app.use(json())
 app.use(morgan('dev'))
@@ -21,8 +22,11 @@ app.use(morgan('dev'))
 // On GET we return all the todos
 
 app.post('/todo', (req, res) => {
+  // Now, the data that I am getting here has been run through the middleware
+  // This is because I am calling .use with the instance of express above
   const newTodo = {
     id: Date.now(),
+    // Specifically here, the request has a .body because of body parser
     text: req.body.text
   }
 
